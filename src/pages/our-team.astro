@@ -1,0 +1,243 @@
+---
+import { css } from '../../styled-system/css';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import TeamCard from '../components/TeamCard.astro';
+import Button from '../components/Button.astro';
+
+const leadership = [
+  {
+    name: 'Arun Karthik',
+    role: 'Founder & CEO',
+    bio: 'Passionate about building products that solve real problems. Previously led engineering teams at multiple startups.',
+  },
+  {
+    name: 'Mohammad Munshi',
+    role: 'Co-founder & CTO',
+    bio: 'Expert in functional programming and scalable architecture. Advocates for clean code and developer experience.',
+  },
+];
+
+const productStrategy = [
+  {
+    name: 'Sarah Chen',
+    role: 'Head of Product',
+    bio: 'Bringing 10+ years of product leadership experience. Focused on user-centric product development.',
+  },
+  {
+    name: 'James Wilson',
+    role: 'Product Manager',
+    bio: 'Former startup founder turned PM. Obsessed with understanding user needs and building the right things.',
+  },
+];
+
+const designTeam = [
+  {
+    name: 'Emma Thompson',
+    role: 'Design Lead',
+    bio: 'Creates beautiful, functional interfaces that users love. Champion of accessibility and inclusive design.',
+  },
+  {
+    name: 'David Park',
+    role: 'Senior UX Designer',
+    bio: 'User research specialist. Ensures every design decision is backed by real user insights.',
+  },
+  {
+    name: 'Priya Sharma',
+    role: 'Product Designer',
+    bio: 'From wireframes to final pixels. Brings ideas to life with attention to every detail.',
+  },
+  {
+    name: 'Marcus Johnson',
+    role: 'Visual Designer',
+    bio: 'Creates the visual language of our products. Expert in design systems and brand consistency.',
+  },
+  {
+    name: 'Ana Rodriguez',
+    role: 'UX Researcher',
+    bio: 'Leads user testing and research initiatives. The voice of our users in every discussion.',
+  },
+];
+
+const engineeringTeam = [
+  {
+    name: 'Alex Kumar',
+    role: 'Engineering Lead',
+    bio: 'Full-stack expert with deep knowledge of functional programming. Leads by example with clean, tested code.',
+  },
+  {
+    name: 'Lisa Wang',
+    role: 'Senior Frontend Engineer',
+    bio: 'React and TypeScript specialist. Builds performant, accessible user interfaces.',
+  },
+  {
+    name: 'Tom Anderson',
+    role: 'Senior Backend Engineer',
+    bio: 'Functional programming advocate. Designs scalable APIs and data architectures.',
+  },
+  {
+    name: 'Rachel Kim',
+    role: 'Full Stack Engineer',
+    bio: 'End-to-end ownership mindset. Comfortable from database to deployment.',
+  },
+  {
+    name: 'Chris Taylor',
+    role: 'Backend Engineer',
+    bio: 'Rust and Go enthusiast. Optimizes for performance and reliability.',
+  },
+  {
+    name: 'Nina Patel',
+    role: 'Frontend Engineer',
+    bio: 'Animations and interactions specialist. Makes our products feel alive.',
+  },
+  {
+    name: 'Kevin O\'Brien',
+    role: 'DevOps Engineer',
+    bio: 'Keeps our systems running smoothly. Infrastructure as code evangelist.',
+  },
+  {
+    name: 'Maya Santos',
+    role: 'QA Engineer',
+    bio: 'Quality advocate. Ensures we ship products we\'re proud of.',
+  },
+];
+---
+
+<Base title="Our Team" description="Meet the makers behind MakerStudio.">
+  <Hero
+    title="Meet the Makers"
+    subtitle="A diverse team of designers, engineers, and product people united by a shared passion for building great software."
+  />
+
+  <!-- Leadership Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Leadership"
+        subtitle="The founders driving our vision."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))' },
+        gap: '6',
+        maxW: '3xl',
+        mx: 'auto',
+      })}>
+        {leadership.map(member => (
+          <TeamCard name={member.name} role={member.role} bio={member.bio} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product & Strategy Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'gray.50',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Product & Strategy"
+        subtitle="Deciding what to build and why."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))' },
+        gap: '6',
+        maxW: '3xl',
+        mx: 'auto',
+      })}>
+        {productStrategy.map(member => (
+          <TeamCard name={member.name} role={member.role} bio={member.bio} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Team Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Design Team"
+        subtitle="Creating experiences users love."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))', lg: 'repeat(3, minmax(0, 1fr))' },
+        gap: '6',
+      })}>
+        {designTeam.map(member => (
+          <TeamCard name={member.name} role={member.role} bio={member.bio} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Team Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'gray.50',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Engineering Team"
+        subtitle="Turning designs into reality."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))', lg: 'repeat(3, minmax(0, 1fr))', xl: 'repeat(4, minmax(0, 1fr))' },
+        gap: '6',
+      })}>
+        {engineeringTeam.map(member => (
+          <TeamCard name={member.name} role={member.role} bio={member.bio} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+    textAlign: 'center',
+  })}>
+    <div class={css({ maxW: '2xl', mx: 'auto' })}>
+      <h2 class={css({
+        fontSize: { base: '2xl', md: '3xl' },
+        fontWeight: '600',
+        color: 'gray.800',
+        mb: '4',
+        letterSpacing: '-0.02em',
+      })}>
+        Want to Join Us?
+      </h2>
+      <p class={css({
+        fontSize: 'lg',
+        color: 'gray.500',
+        mb: '8',
+        lineHeight: '1.7',
+      })}>
+        We're always looking for talented people who share our values.
+      </p>
+      <Button href="/join-the-team" variant="primary">
+        Join The Team
+      </Button>
+    </div>
+  </section>
+</Base>

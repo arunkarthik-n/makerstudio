@@ -1,0 +1,374 @@
+---
+import { css } from '../../styled-system/css';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import Button from '../components/Button.astro';
+import { Focus, Palette, ArrowRight, FlaskConical, Accessibility, Layers, Database, Minus, Cloud } from 'lucide-astro';
+
+const simplicityItems = [
+  {
+    Icon: Focus,
+    title: 'Focused Features',
+    description: 'We ruthlessly prioritize. Every feature must earn its place by solving a real problem for users.',
+  },
+  {
+    Icon: Palette,
+    title: 'Clean UI',
+    description: 'Visual simplicity reduces cognitive load. We remove clutter so users can focus on what matters.',
+  },
+  {
+    Icon: ArrowRight,
+    title: 'Straightforward Flows',
+    description: 'The shortest path between intent and action. No unnecessary steps, no confusing options.',
+  },
+];
+
+const usabilityItems = [
+  {
+    Icon: FlaskConical,
+    title: 'User Testing',
+    description: 'Real users test every major feature. Their feedback directly shapes the final product.',
+  },
+  {
+    Icon: Accessibility,
+    title: 'Accessibility',
+    description: 'We design for everyone. WCAG compliance isn\'t an afterthought—it\'s built into our process.',
+  },
+  {
+    Icon: Layers,
+    title: 'Consistency',
+    description: 'Predictable patterns help users build mental models. Same problem, same solution, everywhere.',
+  },
+];
+
+const immutabilityItems = [
+  {
+    Icon: Database,
+    title: 'Immutable Data',
+    description: 'Data structures that never change after creation. This eliminates bugs from unexpected mutations.',
+  },
+  {
+    Icon: Minus,
+    title: 'Minimizing Side Effects',
+    description: 'Pure functions that don\'t modify external state. What you see is exactly what you get.',
+  },
+  {
+    Icon: Cloud,
+    title: 'Statelessness',
+    description: 'Each operation stands alone. No hidden dependencies, no mysterious state to track.',
+  },
+];
+---
+
+<Base title="Our Design" description="Our design philosophy: Simplicity, Usability, and Immutability.">
+  <Hero
+    title="Simplicity, Usability, Immutability"
+    subtitle="Three principles that guide every design decision we make."
+  />
+
+  <!-- Simplicity Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { lg: 'repeat(2, minmax(0, 1fr))' },
+        gap: '12',
+        alignItems: 'center',
+      })}>
+        <div>
+          <h2 class={css({
+            fontSize: { base: '2xl', md: '3xl' },
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '4',
+            letterSpacing: '-0.02em',
+          })}>
+            Simplicity
+          </h2>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+            mb: '6',
+          })}>
+            Complexity is the enemy of usability. We believe that the best products feel simple—even when they're solving complex problems. This doesn't mean dumbing things down. It means making the right choices so users don't have to.
+          </p>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+          })}>
+            Every feature, every interaction, every line of copy is examined through this lens: is this the simplest way to achieve this goal?
+          </p>
+        </div>
+
+        <div class={css({
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '4',
+        })}>
+          {simplicityItems.map(item => (
+            <div class={css({
+              display: 'flex',
+              gap: '4',
+              p: '5',
+              bg: 'gray.50',
+              borderRadius: 'lg',
+            })}>
+              <div class={css({
+                w: '10',
+                h: '10',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                bg: 'white',
+                borderRadius: 'lg',
+                flexShrink: '0',
+                border: '1px solid',
+                borderColor: 'gray.200',
+              })}>
+                <item.Icon class={css({ w: '5', h: '5', color: 'gray.700' })} />
+              </div>
+              <div>
+                <h3 class={css({
+                  fontSize: 'base',
+                  fontWeight: '600',
+                  color: 'gray.800',
+                  mb: '1',
+                })}>
+                  {item.title}
+                </h3>
+                <p class={css({
+                  fontSize: 'sm',
+                  color: 'gray.500',
+                  lineHeight: '1.6',
+                })}>
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Usability Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'gray.50',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { lg: 'repeat(2, minmax(0, 1fr))' },
+        gap: '12',
+        alignItems: 'center',
+      })}>
+        <div class={css({
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '4',
+          order: { base: '2', lg: '1' },
+        })}>
+          {usabilityItems.map(item => (
+            <div class={css({
+              display: 'flex',
+              gap: '4',
+              p: '5',
+              bg: 'white',
+              borderRadius: 'lg',
+              border: '1px solid',
+              borderColor: 'gray.100',
+            })}>
+              <div class={css({
+                w: '10',
+                h: '10',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                bg: 'gray.50',
+                borderRadius: 'lg',
+                flexShrink: '0',
+              })}>
+                <item.Icon class={css({ w: '5', h: '5', color: 'gray.700' })} />
+              </div>
+              <div>
+                <h3 class={css({
+                  fontSize: 'base',
+                  fontWeight: '600',
+                  color: 'gray.800',
+                  mb: '1',
+                })}>
+                  {item.title}
+                </h3>
+                <p class={css({
+                  fontSize: 'sm',
+                  color: 'gray.500',
+                  lineHeight: '1.6',
+                })}>
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class={css({ order: { base: '1', lg: '2' } })}>
+          <h2 class={css({
+            fontSize: { base: '2xl', md: '3xl' },
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '4',
+            letterSpacing: '-0.02em',
+          })}>
+            Usability
+          </h2>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+            mb: '6',
+          })}>
+            Beautiful design is worthless if people can't use it. We obsess over the details that make products feel effortless. From button placement to error messages, everything is designed to help users succeed.
+          </p>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+          })}>
+            We test early and often. Real user feedback is the ultimate arbiter of good design—not our opinions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Immutability Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { lg: 'repeat(2, minmax(0, 1fr))' },
+        gap: '12',
+        alignItems: 'center',
+      })}>
+        <div>
+          <h2 class={css({
+            fontSize: { base: '2xl', md: '3xl' },
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '4',
+            letterSpacing: '-0.02em',
+          })}>
+            Immutability
+          </h2>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+            mb: '6',
+          })}>
+            This principle from functional programming has profound implications for how we build software. When data can't be changed unexpectedly, entire categories of bugs simply can't exist.
+          </p>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+          })}>
+            Immutability makes our code predictable, testable, and easy to reason about. It's not just a technical choice—it's a design philosophy that leads to more reliable products.
+          </p>
+        </div>
+
+        <div class={css({
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '4',
+        })}>
+          {immutabilityItems.map(item => (
+            <div class={css({
+              display: 'flex',
+              gap: '4',
+              p: '5',
+              bg: 'gray.50',
+              borderRadius: 'lg',
+            })}>
+              <div class={css({
+                w: '10',
+                h: '10',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                bg: 'white',
+                borderRadius: 'lg',
+                flexShrink: '0',
+                border: '1px solid',
+                borderColor: 'gray.200',
+              })}>
+                <item.Icon class={css({ w: '5', h: '5', color: 'gray.700' })} />
+              </div>
+              <div>
+                <h3 class={css({
+                  fontSize: 'base',
+                  fontWeight: '600',
+                  color: 'gray.800',
+                  mb: '1',
+                })}>
+                  {item.title}
+                </h3>
+                <p class={css({
+                  fontSize: 'sm',
+                  color: 'gray.500',
+                  lineHeight: '1.6',
+                })}>
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'gray.50',
+    textAlign: 'center',
+  })}>
+    <div class={css({ maxW: '2xl', mx: 'auto' })}>
+      <h2 class={css({
+        fontSize: { base: '2xl', md: '3xl' },
+        fontWeight: '600',
+        color: 'gray.800',
+        mb: '4',
+        letterSpacing: '-0.02em',
+      })}>
+        Design With Us
+      </h2>
+      <p class={css({
+        fontSize: 'lg',
+        color: 'gray.500',
+        mb: '8',
+        lineHeight: '1.7',
+      })}>
+        We're looking for designers and engineers who share these values.
+      </p>
+      <Button href="/join-the-team" variant="primary">
+        Join The Team
+      </Button>
+    </div>
+  </section>
+</Base>

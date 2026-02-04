@@ -1,0 +1,232 @@
+---
+import { css } from '../../styled-system/css';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import ContactForm from '../components/ContactForm.astro';
+import BenefitItem from '../components/BenefitItem.astro';
+
+const benefits = [
+  {
+    title: 'Remote-First',
+    description: 'Work from anywhere in the world. We believe in flexibility and autonomy.',
+  },
+  {
+    title: 'Learning Budget',
+    description: 'Annual budget for courses, conferences, and books to keep growing.',
+  },
+  {
+    title: 'Health & Wellness',
+    description: 'Comprehensive health coverage and wellness programs.',
+  },
+  {
+    title: 'Equipment Allowance',
+    description: 'Get the tools you need for your home office setup.',
+  },
+  {
+    title: 'Flexible Hours',
+    description: 'Async-friendly culture. Work when you\'re most productive.',
+  },
+  {
+    title: 'Team Retreats',
+    description: 'Regular in-person meetups to connect and collaborate.',
+  },
+];
+---
+
+<Base title="Join The Team" description="Join our team and help build SaaS products that users love.">
+  <Hero
+    title="Join The Team"
+    subtitle="We're looking for passionate people who want to build great software. If you care about craft, usability, and clean code—we want to hear from you."
+  />
+
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { lg: 'repeat(2, minmax(0, 1fr))' },
+        gap: '16',
+      })}>
+        <!-- Form Section -->
+        <div>
+          <h2 class={css({
+            fontSize: { base: 'xl', md: '2xl' },
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '2',
+            letterSpacing: '-0.02em',
+          })}>
+            Apply Now
+          </h2>
+          <p class={css({
+            fontSize: 'base',
+            color: 'gray.500',
+            mb: '8',
+            lineHeight: '1.7',
+          })}>
+            Fill out the form below and we'll get back to you within a few days.
+          </p>
+
+          <ContactForm />
+        </div>
+
+        <!-- Benefits Section -->
+        <div>
+          <h2 class={css({
+            fontSize: { base: 'xl', md: '2xl' },
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '2',
+            letterSpacing: '-0.02em',
+          })}>
+            Why Join Us?
+          </h2>
+          <p class={css({
+            fontSize: 'base',
+            color: 'gray.500',
+            mb: '8',
+            lineHeight: '1.7',
+          })}>
+            We take care of our team so they can focus on building great products.
+          </p>
+
+          <div class={css({
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '6',
+          })}>
+            {benefits.map(benefit => (
+              <BenefitItem title={benefit.title} description={benefit.description} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We're Looking For -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'gray.50',
+  })}>
+    <div class={css({ maxW: '4xl', mx: 'auto' })}>
+      <h2 class={css({
+        fontSize: { base: '2xl', md: '3xl' },
+        fontWeight: '600',
+        color: 'gray.800',
+        mb: '6',
+        letterSpacing: '-0.02em',
+        textAlign: 'center',
+      })}>
+        What We're Looking For
+      </h2>
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))' },
+        gap: '8',
+        mt: '10',
+      })}>
+        <div class={css({
+          p: '6',
+          bg: 'white',
+          borderRadius: 'lg',
+          border: '1px solid',
+          borderColor: 'gray.100',
+        })}>
+          <h3 class={css({
+            fontSize: 'lg',
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '3',
+          })}>
+            Curiosity
+          </h3>
+          <p class={css({
+            fontSize: 'base',
+            color: 'gray.500',
+            lineHeight: '1.7',
+          })}>
+            You're always learning, always questioning. You dig deep to understand why things work the way they do.
+          </p>
+        </div>
+
+        <div class={css({
+          p: '6',
+          bg: 'white',
+          borderRadius: 'lg',
+          border: '1px solid',
+          borderColor: 'gray.100',
+        })}>
+          <h3 class={css({
+            fontSize: 'lg',
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '3',
+          })}>
+            Craft
+          </h3>
+          <p class={css({
+            fontSize: 'base',
+            color: 'gray.500',
+            lineHeight: '1.7',
+          })}>
+            You care about the details. Quality isn't negotiable—it's the baseline for everything you do.
+          </p>
+        </div>
+
+        <div class={css({
+          p: '6',
+          bg: 'white',
+          borderRadius: 'lg',
+          border: '1px solid',
+          borderColor: 'gray.100',
+        })}>
+          <h3 class={css({
+            fontSize: 'lg',
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '3',
+          })}>
+            Empathy
+          </h3>
+          <p class={css({
+            fontSize: 'base',
+            color: 'gray.500',
+            lineHeight: '1.7',
+          })}>
+            You put users first. You understand that great software comes from understanding real human needs.
+          </p>
+        </div>
+
+        <div class={css({
+          p: '6',
+          bg: 'white',
+          borderRadius: 'lg',
+          border: '1px solid',
+          borderColor: 'gray.100',
+        })}>
+          <h3 class={css({
+            fontSize: 'lg',
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '3',
+          })}>
+            Ownership
+          </h3>
+          <p class={css({
+            fontSize: 'base',
+            color: 'gray.500',
+            lineHeight: '1.7',
+          })}>
+            You don't wait to be told what to do. You see problems and solve them. You ship and iterate.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

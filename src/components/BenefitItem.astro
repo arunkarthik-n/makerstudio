@@ -1,0 +1,48 @@
+---
+import { css } from '../../styled-system/css';
+import { Check } from 'lucide-astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class={css({
+  display: 'flex',
+  gap: '4',
+})}>
+  <div class={css({
+    w: '8',
+    h: '8',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    bg: 'gray.100',
+    borderRadius: 'full',
+    flexShrink: '0',
+  })}>
+    <Check class={css({ w: '4', h: '4', color: 'gray.700' })} />
+  </div>
+
+  <div>
+    <h4 class={css({
+      fontSize: 'base',
+      fontWeight: '600',
+      color: 'gray.800',
+      mb: '1',
+    })}>
+      {title}
+    </h4>
+
+    <p class={css({
+      fontSize: 'sm',
+      color: 'gray.500',
+      lineHeight: '1.7',
+    })}>
+      {description}
+    </p>
+  </div>
+</div>

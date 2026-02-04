@@ -1,0 +1,19 @@
+{
+  "name": "makerstudio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "panda codegen && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prepare": "panda codegen"
+  },
+  "dependencies": {
+    "astro": "^5.17.1"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^1.8.1",
+    "lucide-astro": "^0.556.0"
+  }
+}

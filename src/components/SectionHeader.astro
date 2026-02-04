@@ -1,0 +1,37 @@
+---
+import { css } from '../../styled-system/css';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  centered?: boolean;
+}
+
+const { title, subtitle, centered = true } = Astro.props;
+---
+
+<div class={css({
+  mb: '12',
+  textAlign: centered ? 'center' : 'left',
+})}>
+  <h2 class={css({
+    fontSize: { base: '2xl', md: '3xl' },
+    fontWeight: '600',
+    color: 'gray.800',
+    mb: subtitle ? '4' : '0',
+    letterSpacing: '-0.02em',
+  })}>
+    {title}
+  </h2>
+  {subtitle && (
+    <p class={css({
+      fontSize: 'lg',
+      color: 'gray.500',
+      maxW: '2xl',
+      mx: centered ? 'auto' : '0',
+      lineHeight: '1.7',
+    })}>
+      {subtitle}
+    </p>
+  )}
+</div>

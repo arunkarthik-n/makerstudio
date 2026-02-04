@@ -1,0 +1,5 @@
+# Netlify redirects
+# Add any redirects here if needed
+
+# SPA fallback (not needed for static Astro, but keeping for reference)
+# /*    /index.html   200

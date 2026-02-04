@@ -1,0 +1,276 @@
+---
+import { css } from '../../styled-system/css';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PrincipleCard from '../components/PrincipleCard.astro';
+import TeamCard from '../components/TeamCard.astro';
+import ProductCard from '../components/ProductCard.astro';
+import BenefitItem from '../components/BenefitItem.astro';
+import Button from '../components/Button.astro';
+
+const principles = [
+  {
+    icon: 'layers' as const,
+    title: 'Simplicity',
+    description: 'We believe in focused features, clean UI, and straightforward flows. Less is more when building products users love.',
+  },
+  {
+    icon: 'circle' as const,
+    title: 'Usability',
+    description: 'Every feature is tested with real users. We prioritize accessibility, consistency, and intuitive interactions.',
+  },
+  {
+    icon: 'link' as const,
+    title: 'Immutability',
+    description: 'Our functional programming approach minimizes side effects, making our code predictable and easy to maintain.',
+  },
+];
+
+const leadership = [
+  {
+    name: 'Arun Karthik',
+    role: 'Founder & CEO',
+    bio: 'Passionate about building products that solve real problems. Previously led engineering teams at multiple startups.',
+  },
+  {
+    name: 'Mohammad Munshi',
+    role: 'Co-founder & CTO',
+    bio: 'Expert in functional programming and scalable architecture. Advocates for clean code and developer experience.',
+  },
+];
+
+const products = [
+  {
+    name: 'LivQueue',
+    description: 'Smart queue management for businesses. Reduce wait times and improve customer satisfaction.',
+  },
+  {
+    name: 'InspectDay',
+    description: 'Property inspection software that streamlines the rental inspection process for agents and tenants.',
+  },
+  {
+    name: 'Motomend',
+    description: 'Automotive service management platform connecting car owners with trusted mechanics.',
+  },
+  {
+    name: 'Estimaze',
+    description: 'Construction estimation tool that simplifies quoting and project management for builders.',
+  },
+];
+
+const benefits = [
+  {
+    title: 'Remote-First',
+    description: 'Work from anywhere. We believe in flexibility and trust our team to deliver.',
+  },
+  {
+    title: 'Learning Budget',
+    description: 'Annual budget for courses, conferences, and books to keep growing your skills.',
+  },
+  {
+    title: 'Health & Wellness',
+    description: 'Comprehensive health coverage and wellness programs to keep you at your best.',
+  },
+  {
+    title: 'Equipment Allowance',
+    description: 'Get the tools you need. We provide allowances for home office setup.',
+  },
+  {
+    title: 'Flexible Hours',
+    description: 'Async-friendly culture. Work when you\'re most productive.',
+  },
+  {
+    title: 'Team Retreats',
+    description: 'Regular in-person meetups to connect, collaborate, and celebrate wins.',
+  },
+];
+---
+
+<Base title="Home" description="Building SaaS products that users love through thoughtful design and functional programming.">
+  <Hero
+    title="Building SaaS That Users Love"
+    subtitle="We combine human-centric UX design with functional programming to create products that are simple, usable, and delightful."
+    primaryCta={{ label: 'Join The Team', href: '/join-the-team' }}
+    secondaryCta={{ label: 'Our Approach', href: '/our-approach' }}
+  />
+
+  <!-- Principles Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Our Guiding Principles"
+        subtitle="Three core values that drive every decision we make."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))', lg: 'repeat(3, minmax(0, 1fr))' },
+        gap: '6',
+      })}>
+        {principles.map(p => (
+          <PrincipleCard icon={p.icon} title={p.title} description={p.description} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Preview Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'gray.50',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Meet Our Leadership"
+        subtitle="The people driving our vision forward."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))' },
+        gap: '6',
+        maxW: '3xl',
+        mx: 'auto',
+      })}>
+        {leadership.map(member => (
+          <TeamCard name={member.name} role={member.role} bio={member.bio} />
+        ))}
+      </div>
+
+      <div class={css({ textAlign: 'center', mt: '8' })}>
+        <Button href="/our-team" variant="outline">
+          View Full Team
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Our Products"
+        subtitle="SaaS solutions built with care for real-world problems."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))' },
+        gap: '6',
+      })}>
+        {products.map(product => (
+          <ProductCard name={product.name} description={product.description} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Culture Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'gray.50',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { lg: 'repeat(2, minmax(0, 1fr))' },
+        gap: '12',
+      })}>
+        <div>
+          <h2 class={css({
+            fontSize: { base: '2xl', md: '3xl' },
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '6',
+            letterSpacing: '-0.02em',
+          })}>
+            Who We're Looking For
+          </h2>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+            mb: '4',
+          })}>
+            We're looking for curious minds who care deeply about craft. People who believe that great software comes from understanding users, not just writing code.
+          </p>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+          })}>
+            If you're excited by functional programming, obsessed with clean design, and want to build products that make a difference—we'd love to hear from you.
+          </p>
+        </div>
+
+        <div>
+          <h2 class={css({
+            fontSize: { base: '2xl', md: '3xl' },
+            fontWeight: '600',
+            color: 'gray.800',
+            mb: '6',
+            letterSpacing: '-0.02em',
+          })}>
+            What It's Like Here
+          </h2>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+            mb: '4',
+          })}>
+            We're a small, focused team that values quality over quantity. No endless meetings, no pointless process—just smart people building great products.
+          </p>
+          <p class={css({
+            fontSize: 'lg',
+            color: 'gray.500',
+            lineHeight: '1.8',
+          })}>
+            We work asynchronously, communicate clearly, and trust each other to deliver. Everyone has ownership and impact.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Benefits & Perks"
+        subtitle="We take care of our team so they can focus on what they do best."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))', lg: 'repeat(3, minmax(0, 1fr))' },
+        gap: '8',
+      })}>
+        {benefits.map(benefit => (
+          <BenefitItem title={benefit.title} description={benefit.description} />
+        ))}
+      </div>
+
+      <div class={css({ textAlign: 'center', mt: '12' })}>
+        <Button href="/join-the-team" variant="primary">
+          Join The Team
+        </Button>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,158 @@
+---
+import { css } from '../../styled-system/css';
+import Button from './Button.astro';
+
+const inputStyles = css({
+  w: 'full',
+  px: '4',
+  py: '3',
+  fontSize: 'base',
+  border: '1px solid',
+  borderColor: 'gray.200',
+  borderRadius: 'md',
+  bg: 'white',
+  color: 'gray.800',
+  transition: 'border-color 0.2s',
+  _focus: {
+    outline: 'none',
+    borderColor: 'gray.400',
+  },
+  _placeholder: {
+    color: 'gray.400',
+  },
+});
+
+const labelStyles = css({
+  display: 'block',
+  fontSize: 'sm',
+  fontWeight: '500',
+  color: 'gray.700',
+  mb: '2',
+});
+---
+
+<form
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class={css({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '6',
+  })}
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <p class={css({ display: 'none' })}>
+    <label>Don't fill this out: <input name="bot-field" /></label>
+  </p>
+
+  <div class={css({
+    display: 'grid',
+    gridTemplateColumns: { base: '1fr', md: 'repeat(2, 1fr)' },
+    gap: '6',
+  })}>
+    <div>
+      <label for="name" class={labelStyles}>Full Name *</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="John Smith"
+        class={inputStyles}
+      />
+    </div>
+
+    <div>
+      <label for="email" class={labelStyles}>Email Address *</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="john@example.com"
+        class={inputStyles}
+      />
+    </div>
+  </div>
+
+  <div class={css({
+    display: 'grid',
+    gridTemplateColumns: { base: '1fr', md: 'repeat(2, 1fr)' },
+    gap: '6',
+  })}>
+    <div>
+      <label for="phone" class={labelStyles}>Phone Number</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="+61 400 000 000"
+        class={inputStyles}
+      />
+    </div>
+
+    <div>
+      <label for="role" class={labelStyles}>Interested Role *</label>
+      <select
+        id="role"
+        name="role"
+        required
+        class={inputStyles}
+      >
+        <option value="">Select a role...</option>
+        <option value="engineer">Software Engineer</option>
+        <option value="designer">Product Designer</option>
+        <option value="product">Product Manager</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class={css({
+    display: 'grid',
+    gridTemplateColumns: { base: '1fr', md: 'repeat(2, 1fr)' },
+    gap: '6',
+  })}>
+    <div>
+      <label for="linkedin" class={labelStyles}>LinkedIn Profile</label>
+      <input
+        type="url"
+        id="linkedin"
+        name="linkedin"
+        placeholder="https://linkedin.com/in/yourprofile"
+        class={inputStyles}
+      />
+    </div>
+
+    <div>
+      <label for="github" class={labelStyles}>GitHub Profile</label>
+      <input
+        type="url"
+        id="github"
+        name="github"
+        placeholder="https://github.com/yourusername"
+        class={inputStyles}
+      />
+    </div>
+  </div>
+
+  <div>
+    <label for="message" class={labelStyles}>Why are you a great fit? *</label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="5"
+      placeholder="Tell us about yourself and why you'd be a great addition to the team..."
+      class={inputStyles}
+    ></textarea>
+  </div>
+
+  <div>
+    <Button type="submit" variant="primary">
+      Submit Application
+    </Button>
+  </div>
+</form>

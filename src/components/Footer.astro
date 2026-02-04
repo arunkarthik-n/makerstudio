@@ -1,0 +1,126 @@
+---
+import { css } from '../../styled-system/css';
+
+const footerLinks = [
+  { href: '/our-approach', label: 'Our Approach' },
+  { href: '/our-design', label: 'Our Design' },
+  { href: '/our-team', label: 'Our Team' },
+  { href: '/join-the-team', label: 'Join The Team' },
+];
+---
+
+<footer class={css({
+  bg: 'gray.900',
+  color: 'white',
+  py: '16',
+  px: { base: '4', md: '8', lg: '16' },
+})}>
+  <div class={css({
+    maxW: '7xl',
+    mx: 'auto',
+    display: 'grid',
+    gridTemplateColumns: { base: '1fr', md: 'repeat(3, 1fr)' },
+    gap: '12',
+  })}>
+    <!-- Brand -->
+    <div>
+      <a href="/" class={css({
+        fontSize: 'xl',
+        fontWeight: '700',
+        color: 'white',
+        textDecoration: 'none',
+        letterSpacing: '-0.02em',
+      })}>
+        MakerStudio
+      </a>
+      <p class={css({
+        mt: '4',
+        fontSize: 'sm',
+        color: 'gray.400',
+        lineHeight: '1.7',
+      })}>
+        Building SaaS products that users love through thoughtful design and functional programming.
+      </p>
+    </div>
+
+    <!-- Links -->
+    <div>
+      <h4 class={css({
+        fontSize: 'sm',
+        fontWeight: '600',
+        mb: '4',
+        color: 'gray.300',
+      })}>
+        Navigation
+      </h4>
+      <div class={css({
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '3',
+      })}>
+        {footerLinks.map(link => (
+          <a
+            href={link.href}
+            class={css({
+              fontSize: 'sm',
+              color: 'gray.400',
+              textDecoration: 'none',
+              transition: 'color 0.2s',
+              _hover: {
+                color: 'white',
+              },
+            })}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 class={css({
+        fontSize: 'sm',
+        fontWeight: '600',
+        mb: '4',
+        color: 'gray.300',
+      })}>
+        Contact
+      </h4>
+      <div class={css({
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '3',
+        fontSize: 'sm',
+        color: 'gray.400',
+      })}>
+        <p>Melbourne, Australia</p>
+        <a
+          href="mailto:hello@makerstudio.io"
+          class={css({
+            color: 'gray.400',
+            textDecoration: 'none',
+            _hover: {
+              color: 'white',
+            },
+          })}
+        >
+          hello@makerstudio.io
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class={css({
+    maxW: '7xl',
+    mx: 'auto',
+    mt: '12',
+    pt: '8',
+    borderTop: '1px solid',
+    borderColor: 'gray.800',
+    fontSize: 'sm',
+    color: 'gray.500',
+  })}>
+    &copy; {new Date().getFullYear()} MakerStudio. All rights reserved.
+  </div>
+</footer>

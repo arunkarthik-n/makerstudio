@@ -1,0 +1,268 @@
+---
+import { css } from '../../styled-system/css';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import BenefitItem from '../components/BenefitItem.astro';
+import Button from '../components/Button.astro';
+import { Users, Map, Zap, TestTube, Database, Code, FileText, Shield } from 'lucide-astro';
+
+const uxPractices = [
+  {
+    Icon: Users,
+    title: 'User Research',
+    description: 'We start by deeply understanding our users—their needs, frustrations, and goals. No assumptions.',
+  },
+  {
+    Icon: Map,
+    title: 'Journey Mapping',
+    description: 'We map the complete user journey to identify pain points and opportunities for improvement.',
+  },
+  {
+    Icon: Zap,
+    title: 'Rapid Prototyping',
+    description: 'Quick iterations let us test ideas before committing code. Fail fast, learn faster.',
+  },
+  {
+    Icon: TestTube,
+    title: 'Usability Testing',
+    description: 'Every major feature is tested with real users. Their feedback shapes our final product.',
+  },
+];
+
+const fpPrinciples = [
+  {
+    Icon: Database,
+    title: 'Immutability',
+    description: 'Data never changes once created. This eliminates entire categories of bugs and makes reasoning about code simple.',
+  },
+  {
+    Icon: Code,
+    title: 'Pure Functions',
+    description: 'Functions that always return the same output for the same input. No surprises, no hidden state.',
+  },
+  {
+    Icon: FileText,
+    title: 'Declarative Style',
+    description: 'We describe what we want, not how to get it. This leads to more readable, maintainable code.',
+  },
+  {
+    Icon: Shield,
+    title: 'Strong Typing',
+    description: 'Types catch errors at compile time, not runtime. The compiler is our first line of defense.',
+  },
+];
+
+const benefits = [
+  {
+    title: 'Fewer Bugs',
+    description: 'Immutability and pure functions eliminate entire categories of bugs before they happen.',
+  },
+  {
+    title: 'Easier Testing',
+    description: 'Pure functions are trivially testable—no mocks, no setup, just inputs and outputs.',
+  },
+  {
+    title: 'Better UX',
+    description: 'Research-driven design means we build what users actually need, not what we assume they want.',
+  },
+  {
+    title: 'Faster Iteration',
+    description: 'Clean architecture lets us pivot quickly without breaking existing functionality.',
+  },
+  {
+    title: 'Scalable Codebase',
+    description: 'Functional patterns make it easy to add features without accumulating technical debt.',
+  },
+  {
+    title: 'Happy Team',
+    description: 'Developers enjoy working with clean, predictable code. It shows in the product.',
+  },
+];
+---
+
+<Base title="Our Approach" description="How we combine human-centric UX design with functional programming to build better software.">
+  <Hero
+    title="UX Meets Functional Programming"
+    subtitle="We believe the best software comes from understanding users deeply and writing code that's predictable, testable, and maintainable."
+  />
+
+  <!-- Human-Centric UX Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Human-Centric UX"
+        subtitle="Every product decision starts with understanding our users."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))' },
+        gap: '8',
+      })}>
+        {uxPractices.map(practice => (
+          <div class={css({
+            display: 'flex',
+            gap: '4',
+            p: '6',
+            bg: 'gray.50',
+            borderRadius: 'lg',
+          })}>
+            <div class={css({
+              w: '12',
+              h: '12',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              bg: 'white',
+              borderRadius: 'lg',
+              flexShrink: '0',
+              border: '1px solid',
+              borderColor: 'gray.200',
+            })}>
+              <practice.Icon class={css({ w: '6', h: '6', color: 'gray.700' })} />
+            </div>
+            <div>
+              <h3 class={css({
+                fontSize: 'lg',
+                fontWeight: '600',
+                color: 'gray.800',
+                mb: '2',
+              })}>
+                {practice.title}
+              </h3>
+              <p class={css({
+                fontSize: 'base',
+                color: 'gray.500',
+                lineHeight: '1.7',
+              })}>
+                {practice.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Functional Programming Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'gray.50',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Functional Programming"
+        subtitle="Clean, predictable code that's a joy to work with."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))' },
+        gap: '8',
+      })}>
+        {fpPrinciples.map(principle => (
+          <div class={css({
+            display: 'flex',
+            gap: '4',
+            p: '6',
+            bg: 'white',
+            borderRadius: 'lg',
+            border: '1px solid',
+            borderColor: 'gray.100',
+          })}>
+            <div class={css({
+              w: '12',
+              h: '12',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              bg: 'gray.50',
+              borderRadius: 'lg',
+              flexShrink: '0',
+            })}>
+              <principle.Icon class={css({ w: '6', h: '6', color: 'gray.700' })} />
+            </div>
+            <div>
+              <h3 class={css({
+                fontSize: 'lg',
+                fontWeight: '600',
+                color: 'gray.800',
+                mb: '2',
+              })}>
+                {principle.title}
+              </h3>
+              <p class={css({
+                fontSize: 'base',
+                color: 'gray.500',
+                lineHeight: '1.7',
+              })}>
+                {principle.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'white',
+  })}>
+    <div class={css({ maxW: '7xl', mx: 'auto' })}>
+      <SectionHeader
+        title="Why This Matters"
+        subtitle="Our approach delivers real benefits for users and developers alike."
+      />
+
+      <div class={css({
+        display: 'grid',
+        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))', lg: 'repeat(3, minmax(0, 1fr))' },
+        gap: '8',
+      })}>
+        {benefits.map(benefit => (
+          <BenefitItem title={benefit.title} description={benefit.description} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class={css({
+    py: '16',
+    px: { base: '4', md: '8', lg: '16' },
+    bg: 'gray.50',
+    textAlign: 'center',
+  })}>
+    <div class={css({ maxW: '2xl', mx: 'auto' })}>
+      <h2 class={css({
+        fontSize: { base: '2xl', md: '3xl' },
+        fontWeight: '600',
+        color: 'gray.800',
+        mb: '4',
+        letterSpacing: '-0.02em',
+      })}>
+        Want to Work This Way?
+      </h2>
+      <p class={css({
+        fontSize: 'lg',
+        color: 'gray.500',
+        mb: '8',
+        lineHeight: '1.7',
+      })}>
+        We're always looking for people who share our passion for thoughtful software development.
+      </p>
+      <Button href="/join-the-team" variant="primary">
+        Join The Team
+      </Button>
+    </div>
+  </section>
+</Base>

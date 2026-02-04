@@ -1,0 +1,17 @@
+@layer reset, base, tokens, recipes, utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+html {
+  font-family: Inter, system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #212121;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
