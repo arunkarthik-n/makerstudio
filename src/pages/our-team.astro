@@ -111,9 +111,8 @@ const engineeringTeam = [
       />
 
       <div class={css({
-        display: 'grid',
-        gridTemplateColumns: { md: 'repeat(2, minmax(0, 1fr))', lg: 'repeat(3, minmax(0, 1fr))' },
-        gap: '6',
+        maxW: 'sm',
+        mx: 'auto',
       })}>
         {designTeam.map(member => (
           <TeamCard name={member.name} role={member.role} bio={member.bio} />
