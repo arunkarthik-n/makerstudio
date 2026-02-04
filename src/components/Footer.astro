@@ -1,11 +1,17 @@
 ---
 import { css } from '../../styled-system/css';
+import { Linkedin, Github } from 'lucide-astro';
 
 const footerLinks = [
   { href: '/our-approach', label: 'Our Approach' },
   { href: '/our-design', label: 'Our Design' },
   { href: '/our-team', label: 'Our Team' },
   { href: '/join-the-team', label: 'Join The Team' },
+];
+
+const socialLinks = [
+  { href: 'https://linkedin.com/company/makerstudio-io', label: 'LinkedIn', Icon: Linkedin },
+  { href: 'https://github.com/makerstudio-io', label: 'GitHub', Icon: Github },
 ];
 ---
 
@@ -19,7 +25,7 @@ const footerLinks = [
     maxW: '7xl',
     mx: 'auto',
     display: 'grid',
-    gridTemplateColumns: { base: '1fr', md: 'repeat(3, 1fr)' },
+    gridTemplateColumns: { base: '1fr', md: 'repeat(4, 1fr)' },
     gap: '12',
   })}>
     <!-- Brand -->
@@ -94,7 +100,20 @@ const footerLinks = [
         fontSize: 'sm',
         color: 'gray.400',
       })}>
-        <p>Melbourne, Australia</p>
+        <p>30 North Gould Street</p>
+        <p>Sheridan, WY 82801</p>
+        <a
+          href="tel:+12057748616"
+          class={css({
+            color: 'gray.400',
+            textDecoration: 'none',
+            _hover: {
+              color: 'white',
+            },
+          })}
+        >
+          (205) 774-8616
+        </a>
         <a
           href="mailto:hello@makerstudio.io"
           class={css({
@@ -107,6 +126,40 @@ const footerLinks = [
         >
           hello@makerstudio.io
         </a>
+      </div>
+    </div>
+
+    <!-- Social -->
+    <div>
+      <h4 class={css({
+        fontSize: 'sm',
+        fontWeight: '600',
+        mb: '4',
+        color: 'gray.300',
+      })}>
+        Follow Us
+      </h4>
+      <div class={css({
+        display: 'flex',
+        gap: '4',
+      })}>
+        {socialLinks.map(link => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            class={css({
+              color: 'gray.400',
+              transition: 'color 0.2s',
+              _hover: {
+                color: 'white',
+              },
+            })}
+          >
+            <link.Icon class={css({ w: '5', h: '5' })} />
+          </a>
+        ))}
       </div>
     </div>
   </div>

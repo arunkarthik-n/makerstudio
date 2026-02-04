@@ -9,97 +9,97 @@ import Button from '../components/Button.astro';
 const leadership = [
   {
     name: 'Arun Karthik',
-    role: 'Founder & CEO',
-    bio: 'Passionate about building products that solve real problems. Previously led engineering teams at multiple startups.',
+    role: 'Founder',
+    bio: 'With a passion for human-centric design, Arun sets the strategic vision for MakerStudio, ensuring our products always put users first.',
   },
   {
     name: 'Mohammad Munshi',
-    role: 'Co-founder & CTO',
-    bio: 'Expert in functional programming and scalable architecture. Advocates for clean code and developer experience.',
+    role: 'CTO',
+    bio: 'A seasoned software architect and evangelist for functional programming, Mohammad leads our engineering team with a focus on clean, robust, scalable code.',
   },
 ];
 
 const productStrategy = [
   {
-    name: 'Sarah Chen',
-    role: 'Head of Product',
-    bio: 'Bringing 10+ years of product leadership experience. Focused on user-centric product development.',
+    name: 'Shalini Balaram',
+    role: 'Product Strategist',
+    bio: 'Shalini uses her expertise in statistical analysis to derive actionable insights from our research data, guiding our product decision making.',
   },
   {
-    name: 'James Wilson',
+    name: 'Judah Leslie',
     role: 'Product Manager',
-    bio: 'Former startup founder turned PM. Obsessed with understanding user needs and building the right things.',
+    bio: 'As the bridge between our technical and creative teams, Judah ensures our products balance user needs with technical feasibility.',
   },
 ];
 
 const designTeam = [
   {
-    name: 'Emma Thompson',
-    role: 'Design Lead',
-    bio: 'Creates beautiful, functional interfaces that users love. Champion of accessibility and inclusive design.',
+    name: 'Arsha Banu',
+    role: 'UX Designer',
+    bio: 'Arsha is a master of crafting intuitive, engaging user experiences. She manages the entire design process, from research to prototyping.',
   },
   {
-    name: 'David Park',
-    role: 'Senior UX Designer',
-    bio: 'User research specialist. Ensures every design decision is backed by real user insights.',
+    name: 'Arun Prasath',
+    role: 'UX Designer',
+    bio: 'Arun combines an eye for visual detail with a deep understanding of user psychology to create interfaces that are both polished and intuitive.',
   },
   {
-    name: 'Priya Sharma',
-    role: 'Product Designer',
-    bio: 'From wireframes to final pixels. Brings ideas to life with attention to every detail.',
+    name: 'Suriya',
+    role: 'UX Designer',
+    bio: 'With experience in interaction design, Suriya collaborates with our engineering team to create products that are both delightful and visually appealing.',
   },
   {
-    name: 'Marcus Johnson',
-    role: 'Visual Designer',
-    bio: 'Creates the visual language of our products. Expert in design systems and brand consistency.',
+    name: 'Nagarani',
+    role: 'UX Designer',
+    bio: 'Nagarani employs a user-centric approach, utilizing research and testing to create experiences that are both effective and enjoyable.',
   },
   {
-    name: 'Ana Rodriguez',
-    role: 'UX Researcher',
-    bio: 'Leads user testing and research initiatives. The voice of our users in every discussion.',
+    name: 'Pavithra',
+    role: 'UX Designer',
+    bio: 'Pavithra specializes in creating intuitive and user-friendly experiences, collaborating across teams to deliver user-focused solutions.',
   },
 ];
 
 const engineeringTeam = [
   {
-    name: 'Alex Kumar',
-    role: 'Engineering Lead',
-    bio: 'Full-stack expert with deep knowledge of functional programming. Leads by example with clean, tested code.',
-  },
-  {
-    name: 'Lisa Wang',
-    role: 'Senior Frontend Engineer',
-    bio: 'React and TypeScript specialist. Builds performant, accessible user interfaces.',
-  },
-  {
-    name: 'Tom Anderson',
-    role: 'Senior Backend Engineer',
-    bio: 'Functional programming advocate. Designs scalable APIs and data architectures.',
-  },
-  {
-    name: 'Rachel Kim',
-    role: 'Full Stack Engineer',
-    bio: 'End-to-end ownership mindset. Comfortable from database to deployment.',
-  },
-  {
-    name: 'Chris Taylor',
+    name: 'Dinesh Anbazhagan',
     role: 'Backend Engineer',
-    bio: 'Rust and Go enthusiast. Optimizes for performance and reliability.',
+    bio: 'An Elixir specialist, Dinesh ensures our backend systems are built on a foundation of clean, efficient, scalable code.',
   },
   {
-    name: 'Nina Patel',
+    name: 'Janardhan',
+    role: 'Webflow Developer',
+    bio: 'Janardhan leverages Webflow to enable rapid prototyping and development of our marketing websites.',
+  },
+  {
+    name: 'Sandip Karmokar',
     role: 'Frontend Engineer',
-    bio: 'Animations and interactions specialist. Makes our products feel alive.',
+    bio: 'A CSS, JavaScript, and Liveview expert, Sandip delivers interfaces that are reactive, performant, and inclusive.',
   },
   {
-    name: 'Kevin O\'Brien',
-    role: 'DevOps Engineer',
-    bio: 'Keeps our systems running smoothly. Infrastructure as code evangelist.',
+    name: 'Aditya Rawat',
+    role: 'Frontend Engineer',
+    bio: 'Aditya crafts dashboards that enable users to explore and derive meaningful insights from their data.',
   },
   {
-    name: 'Maya Santos',
-    role: 'QA Engineer',
-    bio: 'Quality advocate. Ensures we ship products we\'re proud of.',
+    name: 'Murtaza Munshi',
+    role: 'Backend Engineer',
+    bio: 'A senior backend engineer, Murtaza architects the robust and scalable systems that power our SaaS products.',
+  },
+  {
+    name: 'Ramesh',
+    role: 'Backend Engineer',
+    bio: 'A veteran developer using Elixir, Go, and Rust for highly concurrent, efficient, and fault-tolerant systems.',
+  },
+  {
+    name: 'Arijeet Sarkar',
+    role: 'Frontend Engineer',
+    bio: 'A React, Svelte, and TypeScript expert, Arijeet creates performant and maintainable engaging interfaces.',
+  },
+  {
+    name: 'Nikhil Mathew',
+    role: 'Frontend Engineer',
+    bio: 'Nikhil develops responsive and visually appealing React and Tailwind interfaces that enhance user engagement.',
   },
 ];
 ---
@@ -170,7 +170,7 @@ const engineeringTeam = [
   })}>
     <div class={css({ maxW: '7xl', mx: 'auto' })}>
       <SectionHeader
-        title="Design Team"
+        title="Design"
         subtitle="Creating experiences users love."
       />
 
@@ -194,7 +194,7 @@ const engineeringTeam = [
   })}>
     <div class={css({ maxW: '7xl', mx: 'auto' })}>
       <SectionHeader
-        title="Engineering Team"
+        title="Engineering"
         subtitle="Turning designs into reality."
       />
 

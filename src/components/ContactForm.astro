@@ -83,30 +83,25 @@ const labelStyles = css({
     gap: '6',
   })}>
     <div>
-      <label for="phone" class={labelStyles}>Phone Number</label>
+      <label for="phone" class={labelStyles}>Phone</label>
       <input
         type="tel"
         id="phone"
         name="phone"
-        placeholder="+61 400 000 000"
+        placeholder="+1 (555) 000-0000"
         class={inputStyles}
       />
     </div>
 
     <div>
-      <label for="role" class={labelStyles}>Interested Role *</label>
-      <select
-        id="role"
-        name="role"
-        required
+      <label for="resume" class={labelStyles}>Resume</label>
+      <input
+        type="url"
+        id="resume"
+        name="resume"
+        placeholder="Link to your resume"
         class={inputStyles}
-      >
-        <option value="">Select a role...</option>
-        <option value="engineer">Software Engineer</option>
-        <option value="designer">Product Designer</option>
-        <option value="product">Product Manager</option>
-        <option value="other">Other</option>
-      </select>
+      />
     </div>
   </div>
 
@@ -127,7 +122,7 @@ const labelStyles = css({
     </div>
 
     <div>
-      <label for="github" class={labelStyles}>GitHub Profile</label>
+      <label for="github" class={labelStyles}>GitHub / Portfolio</label>
       <input
         type="url"
         id="github"
@@ -139,7 +134,24 @@ const labelStyles = css({
   </div>
 
   <div>
-    <label for="message" class={labelStyles}>Why are you a great fit? *</label>
+    <label for="role" class={labelStyles}>Role *</label>
+    <select
+      id="role"
+      name="role"
+      required
+      class={inputStyles}
+    >
+      <option value="">Select a role...</option>
+      <option value="mobile">Mobile Developer (Kotlin Multi Platform)</option>
+      <option value="product">Product Manager</option>
+      <option value="designer">UI UX Designer</option>
+      <option value="backend">Backend Engineer (Elixir / Rust / Gleam)</option>
+      <option value="frontend">Frontend Engineer (Svelte / TypeScript)</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="message" class={labelStyles}>Why you would be a good fit *</label>
     <textarea
       id="message"
       name="message"
