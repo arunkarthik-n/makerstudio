@@ -3,10 +3,11 @@ import { css } from '../../styled-system/css';
 
 interface Props {
   name: string;
+  url: string;
   description: string;
 }
 
-const { name, description } = Astro.props;
+const { name, url, description } = Astro.props;
 ---
 
 <div class={css({
@@ -27,7 +28,11 @@ const { name, description } = Astro.props;
     color: 'gray.800',
     mb: '2',
   })}>
-    {name}
+    <a href={url} target="_blank" rel="noopener noreferrer" class={css({
+      color: 'inherit',
+      textDecoration: 'none',
+      _hover: { textDecoration: 'underline' },
+    })}>{name}</a>
   </h3>
 
   <p class={css({

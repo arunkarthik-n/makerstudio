@@ -43,10 +43,12 @@ const leadership = [
 const products = [
   {
     name: 'FixAhead',
+    url: 'https://fixahead.com',
     description: 'CMMS software that helps facilities and maintenance teams track assets, schedule preventive maintenance, and manage work orders efficiently.',
   },
   {
     name: 'InspectDay',
+    url: 'https://inspectday.com',
     description: 'Home inspection software that streamlines the inspection process for home inspectors with easy reporting and scheduling.',
   },
 ];
@@ -161,7 +163,7 @@ const benefits = [
         gap: '6',
       })}>
         {products.map(product => (
-          <ProductCard name={product.name} description={product.description} />
+          <ProductCard name={product.name} url={product.url} description={product.description} />
         ))}
       </div>
     </div>
